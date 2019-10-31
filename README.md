@@ -1,0 +1,2 @@
+# SmallProjectUsingAjaxAndJQuery
+SmallProject
