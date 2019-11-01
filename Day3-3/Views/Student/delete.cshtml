@@ -1,0 +1,13 @@
+﻿@model Student
+@{
+    ViewBag.Title = "delete";
+}
+
+<h2>delete</h2>
+<form method="post">
+    are you to delete studen name @Model.Name
+    @Html.HiddenFor(a=>a.Id)
+    <input type="submit" class="btn btn-danger" value="delete" />
+    @Html.ActionLink("CANCEL","Index")
+</form>
+

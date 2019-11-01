@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "GetAllDept";
+}
+
+<h2>GetAllDept</h2>
+<form action="/student/removefromdept" method="post">
+
+    <div class="col-sm-6">
+        @Html.DropDownList("DeptNo", null, new { @class = "form-control" })
+    </div>
+    <div id="div1">
+
+    </div>
+    <input type="submit" value="change" />
+
+    </form>
+    @section scripts{
+
+        <script>
+            $("#DeptNo").on("change", function () {
+                var z = $("#DeptNo").val();
+                $("#div1").load("/student/getstbydept/" + z);
+            })
+        </script>
+    }
+

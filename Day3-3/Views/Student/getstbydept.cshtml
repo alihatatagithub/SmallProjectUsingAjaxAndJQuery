@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Student>
+
+    <table class="table table-hover table-bordered">
+
+        <tr>
+            <td>Name</td>
+            <td>operation</td>
+        </tr>
+        @foreach (Student item in Model)
+        {
+            if (item.DeptNo == null)
+            {
+            <tr class="bg-danger">
+                <td >@item.Name</td>
+
+                <td>
+                @Html.CheckBox("dept." + item.Id, false)                             
+                </td>
+            </tr>
+            }
+            else
+            {
+                <tr class="bg-success">
+                    <td>@item.Name</td>
+
+                    <td>
+                        @Html.CheckBox("dept." + item.Id, true)
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+
+

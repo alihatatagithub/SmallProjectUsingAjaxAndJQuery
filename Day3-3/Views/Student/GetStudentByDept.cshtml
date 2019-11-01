@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Student>
+@{
+    ViewBag.Title = "GetStudentByDept";
+}
+
+<h2>GetStudentByDept</h2>
+
+@Html.DropDownList("DeptNo",null,"All Depts")
+<div id="div1">
+    @Html.Partial("getstdindept", Model)
+
+
+</div>
+@section scripts{
+    <script>
+        $("#DeptNo").on("change", function () {
+            var z = $("#DeptNo").val();
+           $("#div1").load("/student/getstdindept?DeptNo="+z)
+        })
+    </script>
+    }
